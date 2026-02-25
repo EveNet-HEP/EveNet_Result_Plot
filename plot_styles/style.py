@@ -17,12 +17,12 @@
 # }
 
 BASE_MODEL_COLORS = {
-    "SSL":      "#D55E00",
-    "Nominal":  "#0072B2",
-    "Ablation": "#3E5F78",
-    "Scratch":  "#E69F00",
-    "Ref.":     "#9A9A9A",
-    "SPANet":   "#9A9A9A",
+    "SSL":      "#D55E00",   # distinct muted teal-green (large separation)
+    "Nominal":  "#0072B2",   # fixed
+    "Ablation": "#3E5F78",   # darker blue-grey for strong contrast
+    "Scratch":  "#E69F00",   # fixed
+    "Ref.":     "#9A9A9A",   # neutral grey
+    "SPANet":   "#9A9A9A",   # same grey for grouping
     "XGBoost":  "#009E73",
     "TabPFN":   "#CC79A7",
 }
