@@ -25,7 +25,8 @@ BASE_MODEL_COLORS = {
     "SPANet":   "#9A9A9A",   # same grey for grouping
     "XGBoost":  "#009E73",
     "TabPFN":   "#CC79A7",
-    "Sup(Cls)": "#56B4E9"
+    "Sup(Cls)": "#56B4E9",
+    "Cls(Sup)": "#56B4E9",
 }
 
 MODEL_COLORS = dict(BASE_MODEL_COLORS)
@@ -56,7 +57,7 @@ MODEL_PRETTY = {
     "evenet-pretrain_individual": "Full",
     "evenet-pretrain_param": "Full (param)",
     "evenet-scratch_param": "Scratch (param)",
-    "evenet-ClsPretrain_individual": "Sup(Cls)",
+    "evenet-ClsPretrain_individual": "Cls(Sup)",
     "xgb_individual": "XGBoost",
     "xgb_param": "XGBoost (param)",
     "tabpfn_individual": "TabPFN",

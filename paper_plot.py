@@ -566,6 +566,12 @@ DEFAULT_GRID_CONFIG = {
                     "color": MODEL_COLORS["evenet-scratch_individual"],
                 },
                 {
+                    "model": "evenet-ClsPretrain",
+                    "type": "individual",
+                    "label": "Cls(Sup)",
+                    "color": MODEL_COLORS["evenet-ClsPretrain_individual"],
+                },
+                {
                     "model": "xgb",
                     "type": "individual",
                     "label": "XGBoost",
@@ -619,6 +625,12 @@ DEFAULT_GRID_CONFIG = {
                     "type": "individual",
                     "label": "Full",
                     "color": MODEL_COLORS["evenet-pretrain_individual"],
+                },
+                {
+                    "model": "evenet-ClsPretrain",
+                    "type": "individual",
+                    "label": "Cls(Sup)",
+                    "color": MODEL_COLORS["evenet-ClsPretrain_individual"],
                 },
                 {
                     "model": "evenet-pretrain",
@@ -2503,6 +2515,7 @@ def read_grid_data(file_path):
         ("evenet-scratch", "individual"): (2048, 1),
         ("evenet-scratch", "param"): (2048, 2),
         ("evenet-SSL", "individual"): (4096, 1),
+        ("evenet-ClsPretrain", "individual"): (4096, 1),
     }
 
     with open(method_dir / "all_checkpoints.txt") as f:
@@ -2510,8 +2523,9 @@ def read_grid_data(file_path):
 
     pattern_ckpt = re.compile(
         r"""
-        ^(?P<model>evenet-(?:pretrain|scratch|SSL))/
+        ^(?P<model>evenet-(?:pretrain|scratch|SSL|ClsPretrain))/
         (?P<training>(?:individual|parametrized_reduce_factor_x_1_y_1))/
+        /?
         (?:
             MX-(?P<mX>[\d.]+)_MY-(?P<mY>[\d.]+)/
             |
