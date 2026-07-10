@@ -1,7 +1,7 @@
 {
     "30": {
-        "classification": 0.6017749309539795,
-        "segmentation": 2.0094218254089355,
-        "total_loss": 2.611196756362915
+        "classification": 0.5527659058570862,
+        "segmentation": 1.456967830657959,
+        "total_loss": 2.009733736515045
     }
 }
