@@ -208,7 +208,7 @@ DEFAULT_QE_CONFIG = {
 DEFAULT_BSM_CONFIG = {
     "train_sizes": [10, 30, 100, 300],
     "typical_dataset_size": 300,
-    "models": ["Nominal", "SSL", "Scratch", "SPANet"],
+    "models": ["Nominal", "Sup(Cls)", "SSL", "Scratch", "SPANet"],
     "heads": ["Cls", "Cls+Asn", "Cls+Seg"],
     "pair_heads": ["Cls+Asn"],
     "legend": {
@@ -313,7 +313,7 @@ DEFAULT_BSM_CONFIG = {
 }
 
 DEFAULT_AD_CONFIG = {
-    "models": ["Nominal", "SSL", "Scratch"],
+    "models": ["Nominal", "SSL", "Sup(Cls)", "Scratch"],
     "heads": [],
     "legend": {
         "legends": ["calibration", "models"],
@@ -1267,6 +1267,7 @@ def read_bsm_data(folder_path):
     MODEL_NAME_MAPPING = {
         "evenet-pretrainv1": "Ablation",
         "evenet-pretrain-ablation1": "SSL",
+        "evenet-pretrain-ablation3": "Sup(Cls)",
         "evenet-pretrain-ablation4": "Nominal",
         "evenet-scratch": "Scratch",
         "spanet-scratch": "SPANet",
@@ -1763,7 +1764,7 @@ def plot_bsm_results_webpage(
     from plot_styles.style import BSM_DATASET_MARKERS, BSM_DATASET_PRETTY
 
     BSM_CONFIG = {
-        "models": ["Nominal", "Scratch", "SSL", "SPANet"],
+        "models": ["Nominal", "Sup(Cls)", "Scratch", "SSL", "SPANet"],
         # Set to an empty list if heads are not applicable for BSM.
         "heads": ["Cls", "Cls+Asn"],
         "train_sizes": [10, 30, 100, 300],
@@ -1834,7 +1835,7 @@ def read_ad_data(file_path):
     AD_MODEL_MAPPING = {
         "EveNet-f.t.(SSL)": "SSL",
         "EveNet-f.t.(Cls+Gen)": "Nominal",
-        "EveNet-f.t.(Cls+Gen+Assign)": "Ablation",
+        "EveNet-f.t.(Cls)": "Sup(Cls)",
         "EveNet-scratch": "Scratch",
     }
 

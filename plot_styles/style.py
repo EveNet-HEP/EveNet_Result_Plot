@@ -46,6 +46,7 @@ MODEL_PRETTY = {
     "SSL": "SSL",
     "Nominal": "Full",
     "Ablation": "Ablation",
+    "Sup(Cls)": "Sup(Cls)",
     "Scratch": "Scratch",
     "Ref.": "Ref",
     "SPANet": "SPANet",
