@@ -17,14 +17,16 @@
 # }
 
 BASE_MODEL_COLORS = {
-    "SSL":      "#D55E00",
-    "Nominal":  "#0072B2",
-    "Ablation": "#3E5F78",
-    "Scratch":  "#E69F00",
-    "Ref.":     "#9A9A9A",
-    "SPANet":   "#9A9A9A",
+    "SSL":      "#D55E00",   # distinct muted teal-green (large separation)
+    "Nominal":  "#0072B2",   # fixed
+    "Ablation": "#3E5F78",   # darker blue-grey for strong contrast
+    "Scratch":  "#E69F00",   # fixed
+    "Ref.":     "#9A9A9A",   # neutral grey
+    "SPANet":   "#9A9A9A",   # same grey for grouping
     "XGBoost":  "#009E73",
     "TabPFN":   "#CC79A7",
+    "Sup(Cls)": "#56B4E9",
+    "Cls(Sup)": "#56B4E9",
 }
 
 MODEL_COLORS = dict(BASE_MODEL_COLORS)
@@ -32,6 +34,7 @@ MODEL_COLORS.update({
     "evenet-scratch_individual": BASE_MODEL_COLORS["Scratch"],
     "evenet-pretrain_individual": BASE_MODEL_COLORS["Nominal"],
     "evenet-SSL_individual": BASE_MODEL_COLORS["SSL"],
+    "evenet-ClsPretrain_individual": BASE_MODEL_COLORS["Sup(Cls)"],
     "evenet-pretrain_param": "#7E65EA",
     "evenet-scratch_param": BASE_MODEL_COLORS.get("Scratch", BASE_MODEL_COLORS["Nominal"]),
     "xgb_individual": BASE_MODEL_COLORS["XGBoost"],
@@ -43,6 +46,7 @@ MODEL_PRETTY = {
     "SSL": "SSL",
     "Nominal": "Full",
     "Ablation": "Ablation",
+    "Sup(Cls)": "Sup(Cls)",
     "Scratch": "Scratch",
     "Ref.": "Ref",
     "SPANet": "SPANet",
@@ -54,6 +58,7 @@ MODEL_PRETTY = {
     "evenet-pretrain_individual": "Full",
     "evenet-pretrain_param": "Full (param)",
     "evenet-scratch_param": "Scratch (param)",
+    "evenet-ClsPretrain_individual": "Cls(Sup)",
     "xgb_individual": "XGBoost",
     "xgb_param": "XGBoost (param)",
     "tabpfn_individual": "TabPFN",

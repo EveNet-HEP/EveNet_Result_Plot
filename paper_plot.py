@@ -208,13 +208,13 @@ DEFAULT_QE_CONFIG = {
 DEFAULT_BSM_CONFIG = {
     "train_sizes": [10, 30, 100, 300],
     "typical_dataset_size": 300,
-    "models": ["Nominal", "SSL", "Scratch", "SPANet"],
+    "models": ["Nominal", "Sup(Cls)", "SSL", "Scratch", "SPANet"],
     "heads": ["Cls", "Cls+Asn", "Cls+Seg"],
     "pair_heads": ["Cls+Asn"],
     "legend": {
         "legends": ["dataset", "heads", "models"],
-        "fig_size": (6.5, 1.2),
-        "style": DEFAULT_LEGEND_STYLE,
+        "fig_size": (8.8, 1.2),
+        "style": PlotStyle(legend_size=13.5),
     },
     "loss": {
         "fig_size": (4.5, 4.5), "grid": False,
@@ -313,7 +313,7 @@ DEFAULT_BSM_CONFIG = {
 }
 
 DEFAULT_AD_CONFIG = {
-    "models": ["Nominal", "SSL", "Scratch"],
+    "models": ["Nominal", "SSL", "Sup(Cls)", "Scratch"],
     "heads": [],
     "legend": {
         "legends": ["calibration", "models"],
@@ -332,8 +332,9 @@ DEFAULT_AD_CONFIG = {
         "y_ref": 6.4,
         "f_name": "ad_significance",
         "style": PlotStyle(
-            base_font_size=18.0, tick_label_size=17.0, legend_size=16.0,
-            cms_label_fontsize=20.0, cms_label_y_start=0.98,
+            base_font_size=18.0, tick_label_size=17.0, legend_size=14.5,
+            legend_y_start=1.0, legend_y_gap=0.05,
+            cms_label_fontsize=18.0, cms_label_y_start=0.975,
             full_axis=True
         ),
         "fig_size": (13, 6),
@@ -390,8 +391,8 @@ DEFAULT_AD_CONFIG = {
         "fig_size": (8.5, 8),
         "text_font_size": 14.0,
         "text_line_spacing": 0.041,
-        "y_min": 3,
-        "y_max": 1.5e3,
+        "y_min": 2.5,
+        "y_max": 2e3,
         "x_min": 6,
         "x_max": 14,
         "sideband_text_y": 0.05,
@@ -404,8 +405,8 @@ DEFAULT_AD_CONFIG = {
             "fpr_thresholds": [-1.0],
             "height_ratio": (2, 1),
             "y_label": "Data - Pred. \n ($\\ell$-reweighted)",
-            # "y_min": -10,
-            # "y_max": 30,
+            "y_min": -75,
+            "y_max": 500,
             "nbins": 2,
             "show_markers": False,
         },
@@ -422,8 +423,8 @@ DEFAULT_AD_CONFIG = {
                 "f_name": "ad_mass_distribution_no_signal",
                 "caption": "AD: mass distribution (12-bin quintic fit)",
                 "sideband_text": r"OS$\rightarrow$SS",
-                "y_min": 1.5,
-                "y_max": 1e3,
+                # "y_min": 1.5,
+                # "y_max": 1e3,
                 "lower_panel": {
                     # "y_min": -10,
                     # "y_max": 13,
@@ -566,6 +567,12 @@ DEFAULT_GRID_CONFIG = {
                     "color": MODEL_COLORS["evenet-scratch_individual"],
                 },
                 {
+                    "model": "evenet-ClsPretrain",
+                    "type": "individual",
+                    "label": "Cls(Sup)",
+                    "color": MODEL_COLORS["evenet-ClsPretrain_individual"],
+                },
+                {
                     "model": "xgb",
                     "type": "individual",
                     "label": "XGBoost",
@@ -599,8 +606,9 @@ DEFAULT_GRID_CONFIG = {
                 "style": PlotStyle(
                     base_font_size=18.0,
                     tick_label_size=16.0,
-                    cms_label_x_start=0.1,
+                    cms_label_x_start=0.072,
                     cms_label_y_start=0.995,
+                    cms_label_ha="left",
                 ),
                 "ratios": [
                     # {"baseline": "XGBoost", "mode": "ratio", "ylabel": "/XGB", "reference_line": True},
@@ -643,8 +651,9 @@ DEFAULT_GRID_CONFIG = {
                 "figsize": (15, 8),
                 "style": PlotStyle(
                     base_font_size=16.0, tick_label_size=15.0,
-                    cms_label_x_start=0.09,
+                    cms_label_x_start=0.072,
                     cms_label_y_start=0.99,
+                    cms_label_ha="left",
                 ),
                 "hspace": 0.05,
                 "height_ratios": {
@@ -714,6 +723,17 @@ def _resolve_style(base: PlotStyle | None, override: PlotStyle | dict | None) ->
         title_size=override.get("title_size", base_style.title_size),
         figure_scale=override.get("figure_scale", base_style.figure_scale),
         object_scale=override.get("object_scale", base_style.object_scale),
+        nbins=override.get("nbins", base_style.nbins),
+        full_axis=override.get("full_axis", base_style.full_axis),
+        legend_anchor=override.get("legend_anchor", base_style.legend_anchor),
+        legend_loc=override.get("legend_loc", base_style.legend_loc),
+        legend_y_start=override.get("legend_y_start", base_style.legend_y_start),
+        legend_y_gap=override.get("legend_y_gap", base_style.legend_y_gap),
+        cms_label_fontsize=override.get("cms_label_fontsize", base_style.cms_label_fontsize),
+        cms_label_y_start=override.get("cms_label_y_start", base_style.cms_label_y_start),
+        cms_label_x_start=override.get("cms_label_x_start", base_style.cms_label_x_start),
+        cms_label_ha=override.get("cms_label_ha", base_style.cms_label_ha),
+        unified_y_pad=override.get("unified_y_pad", base_style.unified_y_pad),
     )
 
 
@@ -1255,6 +1275,7 @@ def read_bsm_data(folder_path):
     MODEL_NAME_MAPPING = {
         "evenet-pretrainv1": "Ablation",
         "evenet-pretrain-ablation1": "SSL",
+        "evenet-pretrain-ablation3": "Sup(Cls)",
         "evenet-pretrain-ablation4": "Nominal",
         "evenet-scratch": "Scratch",
         "spanet-scratch": "SPANet",
@@ -1751,10 +1772,11 @@ def plot_bsm_results_webpage(
     from plot_styles.style import BSM_DATASET_MARKERS, BSM_DATASET_PRETTY
 
     BSM_CONFIG = {
-        "models": ["Nominal", "Scratch", "SSL", "SPANet"],
+        "models": ["Nominal", "Sup(Cls)", "Scratch", "SSL", "SPANet"],
         # Set to an empty list if heads are not applicable for BSM.
         "heads": ["Cls", "Cls+Asn"],
         "train_sizes": [10, 30, 100, 300],
+        "legend": DEFAULT_BSM_CONFIG.get("legend", {}),
         "systematics": DEFAULT_BSM_CONFIG.get("systematics", {}),
     }
 
@@ -1773,9 +1795,10 @@ def plot_bsm_results_webpage(
         legends=["dataset", "heads", "models"],
         file_format=file_format,
         dpi=dpi,
-        style=style,
+        style=_resolve_style(style, BSM_CONFIG["legend"].get("style")),
         fig_scale=fig_scale,
         fig_aspect=fig_aspect,
+        **{k: v for k, v in BSM_CONFIG["legend"].items() if k not in {"legends", "style"}},
     )
 
     results = plot_bsm_results(
@@ -1822,7 +1845,7 @@ def read_ad_data(file_path):
     AD_MODEL_MAPPING = {
         "EveNet-f.t.(SSL)": "SSL",
         "EveNet-f.t.(Cls+Gen)": "Nominal",
-        "EveNet-f.t.(Cls+Gen+Assign)": "Ablation",
+        "EveNet-f.t.(Cls)": "Sup(Cls)",
         "EveNet-scratch": "Scratch",
     }
 
@@ -2503,6 +2526,7 @@ def read_grid_data(file_path):
         ("evenet-scratch", "individual"): (2048, 1),
         ("evenet-scratch", "param"): (2048, 2),
         ("evenet-SSL", "individual"): (4096, 1),
+        ("evenet-ClsPretrain", "individual"): (4096, 1),
     }
 
     with open(method_dir / "all_checkpoints.txt") as f:
@@ -2510,8 +2534,9 @@ def read_grid_data(file_path):
 
     pattern_ckpt = re.compile(
         r"""
-        ^(?P<model>evenet-(?:pretrain|scratch|SSL))/
+        ^(?P<model>evenet-(?:pretrain|scratch|SSL|ClsPretrain))/
         (?P<training>(?:individual|parametrized_reduce_factor_x_1_y_1))/
+        /?
         (?:
             MX-(?P<mX>[\d.]+)_MY-(?P<mY>[\d.]+)/
             |

@@ -1,0 +1,28 @@
+{
+    "haa_ma30": {
+        "haa_ma30/Purity/*a_thirty/event_proportion": 0.1429258035998184,
+        "haa_ma30/Purity/*a_thirty/event_proportion-unc": 0.0003355188737915341,
+        "haa_ma30/Purity/*a_thirty/event_purity": 0.7737627550200287,
+        "haa_ma30/Purity/*a_thirty/event_purity-unc": 0.0010609210462462224,
+        "haa_ma30/Purity/*a_thirty/a_thirty_purity": 0.8250913254457227,
+        "haa_ma30/Purity/*a_thirty/a_thirty_purity-unc": 0.0008097567119880769,
+        "haa_ma30/Purity/0a_thirty/event_proportion": 0.8570741964001816,
+        "haa_ma30/Purity/0a_thirty/event_proportion-unc": 0.0003355188737915341,
+        "haa_ma30/Purity/0a_thirty/event_purity": 1.0,
+        "haa_ma30/Purity/0a_thirty/event_purity-unc": 0.0,
+        "haa_ma30/Purity/0a_thirty/a_thirty_purity": 0,
+        "haa_ma30/Purity/0a_thirty/a_thirty_purity-unc": 0,
+        "haa_ma30/Purity/1a_thirty/event_proportion": 0.08359202548140633,
+        "haa_ma30/Purity/1a_thirty/event_proportion-unc": 0.0002653256751852556,
+        "haa_ma30/Purity/1a_thirty/event_purity": 0.8576878256854511,
+        "haa_ma30/Purity/1a_thirty/event_purity-unc": 0.001158392266480706,
+        "haa_ma30/Purity/1a_thirty/a_thirty_purity": 0.8576878256854511,
+        "haa_ma30/Purity/1a_thirty/a_thirty_purity-unc": 0.001158392266480706,
+        "haa_ma30/Purity/2a_thirty/event_proportion": 0.05933377811841208,
+        "haa_ma30/Purity/2a_thirty/event_proportion-unc": 0.00022647548595270417,
+        "haa_ma30/Purity/2a_thirty/event_purity": 0.6555254394795942,
+        "haa_ma30/Purity/2a_thirty/event_purity-unc": 0.00187014282277264,
+        "haa_ma30/Purity/2a_thirty/a_thirty_purity": 0.802129636800124,
+        "haa_ma30/Purity/2a_thirty/a_thirty_purity-unc": 0.0011086617938678412
+    }
+}
