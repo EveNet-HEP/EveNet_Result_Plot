@@ -39,9 +39,12 @@ class PlotStyle:
     full_axis: bool = True
     legend_anchor: tuple[float, float] | None = None
     legend_loc: str | None = None
+    legend_y_start: float | None = None
+    legend_y_gap: float | None = None
     cms_label_fontsize: float | None = None
     cms_label_y_start: float | None = None
     cms_label_x_start: float | None = None
+    cms_label_ha: str | None = None
     unified_y_pad: float | None = None
 
     def _resolved_sizes(self) -> dict:

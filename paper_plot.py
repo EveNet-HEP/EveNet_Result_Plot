@@ -213,8 +213,8 @@ DEFAULT_BSM_CONFIG = {
     "pair_heads": ["Cls+Asn"],
     "legend": {
         "legends": ["dataset", "heads", "models"],
-        "fig_size": (6.5, 1.2),
-        "style": DEFAULT_LEGEND_STYLE,
+        "fig_size": (8.8, 1.2),
+        "style": PlotStyle(legend_size=13.5),
     },
     "loss": {
         "fig_size": (4.5, 4.5), "grid": False,
@@ -332,8 +332,9 @@ DEFAULT_AD_CONFIG = {
         "y_ref": 6.4,
         "f_name": "ad_significance",
         "style": PlotStyle(
-            base_font_size=18.0, tick_label_size=17.0, legend_size=16.0,
-            cms_label_fontsize=20.0, cms_label_y_start=0.98,
+            base_font_size=18.0, tick_label_size=17.0, legend_size=14.5,
+            legend_y_start=1.0, legend_y_gap=0.05,
+            cms_label_fontsize=18.0, cms_label_y_start=0.975,
             full_axis=True
         ),
         "fig_size": (13, 6),
@@ -605,8 +606,9 @@ DEFAULT_GRID_CONFIG = {
                 "style": PlotStyle(
                     base_font_size=18.0,
                     tick_label_size=16.0,
-                    cms_label_x_start=0.1,
+                    cms_label_x_start=0.072,
                     cms_label_y_start=0.995,
+                    cms_label_ha="left",
                 ),
                 "ratios": [
                     # {"baseline": "XGBoost", "mode": "ratio", "ylabel": "/XGB", "reference_line": True},
@@ -625,12 +627,6 @@ DEFAULT_GRID_CONFIG = {
                     "type": "individual",
                     "label": "Full",
                     "color": MODEL_COLORS["evenet-pretrain_individual"],
-                },
-                {
-                    "model": "evenet-ClsPretrain",
-                    "type": "individual",
-                    "label": "Cls(Sup)",
-                    "color": MODEL_COLORS["evenet-ClsPretrain_individual"],
                 },
                 {
                     "model": "evenet-pretrain",
@@ -655,8 +651,9 @@ DEFAULT_GRID_CONFIG = {
                 "figsize": (15, 8),
                 "style": PlotStyle(
                     base_font_size=16.0, tick_label_size=15.0,
-                    cms_label_x_start=0.09,
+                    cms_label_x_start=0.072,
                     cms_label_y_start=0.99,
+                    cms_label_ha="left",
                 ),
                 "hspace": 0.05,
                 "height_ratios": {
@@ -726,6 +723,17 @@ def _resolve_style(base: PlotStyle | None, override: PlotStyle | dict | None) ->
         title_size=override.get("title_size", base_style.title_size),
         figure_scale=override.get("figure_scale", base_style.figure_scale),
         object_scale=override.get("object_scale", base_style.object_scale),
+        nbins=override.get("nbins", base_style.nbins),
+        full_axis=override.get("full_axis", base_style.full_axis),
+        legend_anchor=override.get("legend_anchor", base_style.legend_anchor),
+        legend_loc=override.get("legend_loc", base_style.legend_loc),
+        legend_y_start=override.get("legend_y_start", base_style.legend_y_start),
+        legend_y_gap=override.get("legend_y_gap", base_style.legend_y_gap),
+        cms_label_fontsize=override.get("cms_label_fontsize", base_style.cms_label_fontsize),
+        cms_label_y_start=override.get("cms_label_y_start", base_style.cms_label_y_start),
+        cms_label_x_start=override.get("cms_label_x_start", base_style.cms_label_x_start),
+        cms_label_ha=override.get("cms_label_ha", base_style.cms_label_ha),
+        unified_y_pad=override.get("unified_y_pad", base_style.unified_y_pad),
     )
 
 
@@ -1768,6 +1776,7 @@ def plot_bsm_results_webpage(
         # Set to an empty list if heads are not applicable for BSM.
         "heads": ["Cls", "Cls+Asn"],
         "train_sizes": [10, 30, 100, 300],
+        "legend": DEFAULT_BSM_CONFIG.get("legend", {}),
         "systematics": DEFAULT_BSM_CONFIG.get("systematics", {}),
     }
 
@@ -1786,9 +1795,10 @@ def plot_bsm_results_webpage(
         legends=["dataset", "heads", "models"],
         file_format=file_format,
         dpi=dpi,
-        style=style,
+        style=_resolve_style(style, BSM_CONFIG["legend"].get("style")),
         fig_scale=fig_scale,
         fig_aspect=fig_aspect,
+        **{k: v for k, v in BSM_CONFIG["legend"].items() if k not in {"legends", "style"}},
     )
 
     results = plot_bsm_results(

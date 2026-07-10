@@ -170,7 +170,9 @@ def plot_ad_sig_summary(
             legends=["calibration", "models"] if include_uncalibrated else ["models"],
             style=style,
             in_figure=True,
-            CMS_label="2016 CMS Open Data DoubleMuon"
+            CMS_label="2016 CMS Open Data DoubleMuon",
+            y_start=1.0,
+            y_gap=0.05,
         )
 
     plt.tight_layout(rect=(0.0, 0.0, 1.0, 0.95))

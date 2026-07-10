@@ -37,6 +37,11 @@ def plot_legend(
     ``"calibration"``, ``"dataset"``, ``"heads"``, ``"models"``,
     ``"ad_mass"``.
     """
+    if style is not None and style.legend_y_start is not None:
+        y_start = style.legend_y_start
+    if style is not None and style.legend_y_gap is not None:
+        y_gap = style.legend_y_gap
+
     y_start_origin: float = y_start
     if legends is None:
         legends = ["calibration", "dataset", "heads", "models"]
@@ -56,6 +61,11 @@ def plot_legend(
         style.cms_label_x_start
         if style is not None and style.cms_label_x_start is not None
         else 0.05
+    )
+    cms_label_ha = (
+        style.cms_label_ha
+        if style is not None and style.cms_label_ha is not None
+        else "left"
     )
     cms_label_y_start = (
         style.cms_label_y_start
@@ -210,7 +220,7 @@ def plot_legend(
             cms_label_y_start,
             CMS_label,
             transform=fig.transFigure,
-            ha="left",
+            ha=cms_label_ha,
             va="top",
             fontsize=cms_label_fontsize,
             fontweight="bold",
