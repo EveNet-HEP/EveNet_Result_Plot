@@ -32,7 +32,7 @@ DEFAULT_STYLE = PlotStyle(base_font_size=20.0, tick_label_size=19.0)
 DEFAULT_QE_CONFIG = {
     # "train_sizes": [15, 148, 1475, 2950],
     "train_sizes": [15, 148, 1475],
-    "models": ["Nominal", "SSL", "Scratch"],
+    "models": ["Nominal", "Sup(Cls)","SSL", "Scratch"],
     # "heads": [],
     "legend": {
         "legends": ["dataset", "heads", "models"],
