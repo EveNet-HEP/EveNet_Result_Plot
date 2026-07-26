@@ -36,7 +36,7 @@ DEFAULT_QE_CONFIG = {
     # "heads": [],
     "legend": {
         "legends": ["dataset", "heads", "models"],
-        "fig_size": (5, 0.75),
+        "fig_size": (8, 0.75),
         "style": DEFAULT_LEGEND_STYLE,
     },
     "loss": {
