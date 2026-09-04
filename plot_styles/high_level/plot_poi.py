@@ -123,6 +123,9 @@ def plot_qe_poi(
         right_x_min_factor: float = 0.95,
         right_x_max_factor: float = 1.75,
         text_x_shift_fraction: float = 0.025,
+        table_column_gap: float | None = None,
+        table_data_gap: float | None = None,
+        table_right_margin: float | None = None,
         uncertainty_scale: float = 1.0,
         concurrence_precision: int = 3,
         uncertainty_precision: int = 4,
@@ -229,8 +232,21 @@ def plot_qe_poi(
 
     d_arr = np.asarray(finite_d, dtype=float)
     u_arr = np.asarray(finite_unc, dtype=float)
-    right_min = max(left_panel_xlim[1] + 0.02, float(np.nanmin(d_arr - u_arr) * right_x_min_factor))
-    right_max = float(np.nanmax(d_arr + u_arr) * right_x_max_factor)
+    data_left = float(np.nanmin(d_arr - u_arr))
+    data_right = float(np.nanmax(d_arr + u_arr))
+    data_span = max(data_right - data_left, np.finfo(float).eps)
+    right_min = max(left_panel_xlim[1] + 0.02, data_left * right_x_min_factor)
+    right_max = data_right * right_x_max_factor
+
+    # The inline table lives in data coordinates.  A fixed offset (the former
+    # 0.005) makes the headers and values overlap when the right axis is tight.
+    # Reserve a dedicated area after the largest error bar instead.
+    col_gap = table_column_gap if table_column_gap is not None else max(0.010, 0.18 * data_span)
+    data_gap = table_data_gap if table_data_gap is not None else max(0.004, 0.08 * data_span)
+    right_margin = table_right_margin if table_right_margin is not None else max(0.003, 0.05 * data_span)
+    x_unc = data_right + data_gap
+    x_prec = x_unc + col_gap
+    right_max = max(right_max, x_prec + right_margin)
     if right_indicator_x is not None:
         right_max = max(right_max, float(right_indicator_x))
     if right_max <= right_min:
@@ -247,7 +263,6 @@ def plot_qe_poi(
             ax_left.axhline(y_sep, color="0.75", linestyle=":", linewidth=row_line_width, zorder=0)
             ax_right.axhline(y_sep, color="0.75", linestyle=":", linewidth=row_line_width, zorder=0)
 
-    x_text = right_max - (right_max - right_min) * text_x_shift_fraction
     text_kwargs = {}
     if text_font_family is not None:
         text_kwargs["family"] = text_font_family
@@ -342,9 +357,8 @@ def plot_qe_poi(
 
         font_kwargs = dict(fontsize=text_size, fontfamily="sans-serif")
 
-        # --- two right-aligned columns ---
-        x_prec = x_text  # precision column (rightmost)
-        x_unc = x_prec - 0.005  # uncertainty column (tune if needed)
+        # ``x_unc`` and ``x_prec`` were calculated from the data extent above,
+        # so the annotations remain readable for both wide and narrow fits.
 
         # ---- header ----
         ax_right.text(
