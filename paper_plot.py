@@ -316,6 +316,7 @@ DEFAULT_BSM_CONFIG = {
 }
 
 DEFAULT_AD_CONFIG = {
+    # "models": ["Nominal", "SSL", "Scratch"],
     "models": ["Nominal", "SSL", "Sup(Cls)", "Scratch"],
     "heads": [],
     "legend": {
@@ -332,6 +333,8 @@ DEFAULT_AD_CONFIG = {
         ],
         "show_error": True,
         "var": "median",
+        "show_distribution": True,
+        "y_min": 0,
         "y_ref": 6.4,
         "f_name": "ad_significance",
         "style": PlotStyle(
@@ -355,10 +358,12 @@ DEFAULT_AD_CONFIG = {
     },
     "gen_calibration": {
         "metric": "mean_calibration_difference",
+        "show_points": True,
         "label": "Cal. Mag. [%]",
         "f_name": "ad_generation_calibration",
         "fig_size": (6, 4),
         "y_min": 0,
+        "y_max": 80,
         "percentage": True,
         "train_types": ["OS"],
         "region_gap": 0.4,
@@ -1861,7 +1866,7 @@ def read_ad_data(file_path):
 
     def compute_channel_significance(model_stats, cl=0.68):
         """
-        Compute median and 68% CL per model per channel.
+        Compute median and central 68% pseudo-experiment interval per channel.
         Returns a DataFrame: model | channel | median | lower | upper
         """
         records = []
@@ -1887,7 +1892,8 @@ def read_ad_data(file_path):
                     "median": median,
                     "lower": lower,
                     "upper": upper,
-                    "number": len(qvals)
+                    "number": len(qvals),
+                    "samples": np.asarray(qvals, dtype=float)
                 })
         return pd.DataFrame(records)
 
@@ -1991,11 +1997,13 @@ def plot_ad_results(
         channels_order=cfg["sig"]["channels_order"],
         show_error=cfg["sig"].get("show_error", True),
         var=cfg["sig"].get("var", "median"),
+        show_distribution=cfg["sig"].get("show_distribution", True),
         f_name=_with_ext(cfg["sig"].get("f_name", "ad_significance"), file_format),
         plot_dir=plot_dir,
         dpi=dpi,
         file_format=file_format,
         y_ref=cfg["sig"].get("y_ref", 6.4),
+        y_min=cfg["sig"].get("y_min", 0),
         style=sig_style,
         fig_scale=sig_scale,
         fig_aspect=fig_aspect,
@@ -2014,6 +2022,8 @@ def plot_ad_results(
             data['gen'],
             models_order=cfg["models"],
             metric=gen_cfg.get("metric", "mmd"),
+            show_points=gen_cfg.get("show_points", False),
+            y_max=gen_cfg.get("y_max"),
             label=gen_cfg.get("label", ""),
             train_types=gen_cfg.get("train_types"),
             region_gap=gen_cfg.get("region_gap", 0.4),

@@ -5,6 +5,7 @@ import os
 from plot_styles.style import MODEL_COLORS
 from plot_styles.utils import apply_nature_axis_style, plot_legend
 from matplotlib.transforms import blended_transform_factory
+from matplotlib.lines import Line2D
 from plot_styles.core.theme import PlotStyle, scaled_fig_size, use_style
 
 sns.set_theme(style="white", font_scale=1.2)
@@ -31,7 +32,7 @@ def plot_ad_sig_summary(
         show_error=True,
         var="median",  # "median" or "mean"
         y_ref=None,
-        y_label=r"Median significance $\pm 68\%$ CL",
+        y_label=r"Local significance [$\sigma$]",
         y_min=None,
         f_name=None,
         plot_dir="./",
@@ -40,6 +41,7 @@ def plot_ad_sig_summary(
         file_format: str | None = None,
         style: PlotStyle | None = None,
         include_uncalibrated: bool = True,
+        show_distribution: bool = False,
 ):
     # Which models appear?
     detected = sorted(df["model"].unique())
@@ -52,6 +54,18 @@ def plot_ad_sig_summary(
 
     channels = channels_order if channels_order else sorted(df["channel"].unique())
     n_channels = len(channels)
+
+    if show_distribution:
+        if "samples" not in df.columns:
+            raise ValueError("Distribution plots require the raw 'samples' column from read_ad_data.")
+        selected = df[df["model"].isin(model_list) & df["channel"].isin(channels)]
+        if not include_uncalibrated:
+            selected = selected[selected["calibrated"]]
+        samples_all = np.concatenate(selected["samples"].to_numpy())
+        if not np.isfinite(samples_all).all() or (samples_all < 0).any():
+            raise ValueError("Significance samples must be finite and nonnegative.")
+        # ponytail: common empirical bins; no KDE or smoothing.
+        bins = np.arange(0, max(1, np.ceil(samples_all.max())) + 0.2, 0.2)
 
     total_bars_per_group = n_models * 2 if include_uncalibrated else n_models  # cal + uncal
     bar_width = 0.8 / total_bars_per_group
@@ -106,22 +120,46 @@ def plot_ad_sig_summary(
 
             yerr = np.array([lo_err, hi_err])  # shape (2, N)
 
-            ax.bar(
-                xpos,
-                vals,
-                width=bar_width,
-                yerr=yerr if show_error else None,
-                color=fill_color,
-                edgecolor="black",
-                hatch=hatch,
-                linewidth=0.8,
-                error_kw=dict(
-                    lw=1.0,
-                    capsize=3,
-                    capthick=1,
-                    ecolor="black",
-                ),
-            )
+            if show_distribution:
+                for x, channel in zip(xpos, channels):
+                    row = df[(df["model"] == model) & (df["channel"] == channel) &
+                             (df["calibrated"] == calibrated)].iloc[0]
+                    samples = np.asarray(row["samples"], dtype=float)
+                    counts, _ = np.histogram(samples, bins=bins)
+                    if not len(samples):
+                        raise ValueError(f"Empty significance samples for {model}, {channel}.")
+                    assert counts.sum() == len(samples)
+                    occupied = np.flatnonzero(counts)
+                    first, last = occupied[0], occupied[-1] + 1
+                    edges = bins[first:last+1]
+                    # Each silhouette has the same peak width; width does not encode n.
+                    widths = 0.42 * bar_width * counts[first:last] / counts.max()
+                    y = np.repeat(edges, 2)[1:-1]
+                    w = np.repeat(widths, 2)
+                    ax.fill(np.r_[x-w, (x+w)[::-1]], np.r_[y, y[::-1]],
+                            facecolor=fill_color, edgecolor=color,
+                            linewidth=0.8, hatch=hatch, zorder=2)
+                marker_color = 0.72 * np.asarray(plt.matplotlib.colors.to_rgb(fill_color))
+                ax.errorbar(xpos, vals, yerr=yerr if show_error else None,
+                            fmt="o", color="black", markerfacecolor=marker_color,
+                            markersize=5, capsize=3, linewidth=1.0, zorder=3)
+            else:
+                ax.bar(
+                    xpos,
+                    vals,
+                    width=bar_width,
+                    yerr=yerr if show_error else None,
+                    color=fill_color,
+                    edgecolor="black",
+                    hatch=hatch,
+                    linewidth=0.8,
+                    error_kw=dict(
+                        lw=1.0,
+                        capsize=3,
+                        capthick=1,
+                        ecolor="black",
+                    ),
+                )
 
     ax.set_xticks(np.arange(n_channels))
     ax.set_xticklabels([
@@ -136,7 +174,7 @@ def plot_ad_sig_summary(
     # sns.despine(ax=ax)
 
     if y_ref is not None:
-        x_ref = (base_xpos[1] + bar_width * 0) / (n_channels - 1 + bar_width)
+        x_ref = 0.32 if show_distribution else (base_xpos[1] + bar_width * 0) / (n_channels - 1 + bar_width)
 
         ax.axhline(
             y=y_ref,
@@ -174,6 +212,23 @@ def plot_ad_sig_summary(
             y_start=1.0,
             y_gap=0.05,
         )
+
+    if show_distribution:
+        median_key = Line2D([], [], marker="o", linestyle="none", color="black",
+                            markerfacecolor="0.45", markersize=5, label="Median")
+        interval_key = ax.errorbar([np.nan], [np.nan], yerr=[0], fmt="none", color="black",
+                                  capsize=3, linewidth=1.0,
+                                  label="16th–84th percentiles")
+        silhouette = np.array([[-0.1, -1], [-0.1, -0.5], [-0.4, -0.5], [-0.4, 0],
+                               [-0.7, 0], [-0.7, 0.5], [-0.2, 0.5], [-0.2, 1],
+                               [0.2, 1], [0.2, 0.5], [0.7, 0.5], [0.7, 0],
+                               [0.4, 0], [0.4, -0.5], [0.1, -0.5], [0.1, -1], [-0.1, -1]])
+        distribution_key = Line2D([], [], marker=silhouette, linestyle="none", color="0.55",
+                                  markersize=13, label="Pseudo-experiment distribution")
+        ax.legend(handles=[median_key, interval_key, distribution_key],
+                  loc="upper left", bbox_to_anchor=(0.28, 0.99),
+                  frameon=False, fontsize=14,
+                  handletextpad=0.6, labelspacing=0.4, borderaxespad=0.8)
 
     plt.tight_layout(rect=(0.0, 0.0, 1.0, 0.95))
 
@@ -213,6 +268,8 @@ def plot_ad_gen_summary(
         style: PlotStyle | None = None,
         in_figure: bool = True,
         percentage: bool = False,
+        show_points: bool = False,
+        y_max=None,
 ):
     """
     Single-panel bar plot for an after-cut metric (e.g., MMD or calibration magnitude).
@@ -221,6 +278,7 @@ def plot_ad_gen_summary(
     - Colors: model types (green/blue scheme)
     - Hatching: calibrated vs uncalibrated
     - Error bars: central 68% interval (16–84% quantiles)
+    - With show_points=True, show every ensemble value; OS calibration overlays median bars.
     """
 
     detected = sorted(df["model"].unique())
@@ -334,7 +392,25 @@ def plot_ad_gen_summary(
                 hatch=hatch,
                 linewidth=0.8,
             )
-
+            if show_points:
+                for x, group in zip(xpos, x_groups):
+                    values = df[(df["model"] == method) & (df["calibrated"] == cal)
+                                & (df["train_type"] == group)][metric].to_numpy(dtype=float)
+                    if len(values) != 8 or not np.isfinite(values).all():
+                        raise ValueError(f"Expected eight finite ensemble values for {method}, {group}.")
+                    values = values * (100 if percentage else 1)
+                    # Horizontal jitter leaves a clear gap around the central error bar.
+                    positions = x + bar_width * np.array([-0.44, 0.24, -0.24, 0.44, -0.34, 0.34, -0.14, 0.14])
+                    visible = values <= y_max if y_max is not None else np.ones(8, dtype=bool)
+                    rgb = np.asarray(plt.matplotlib.colors.to_rgb(fill_color))
+                    ax.scatter(positions[visible], values[visible], s=36,
+                               facecolor=0.72*rgb, edgecolor=0.55*rgb, linewidth=0.9, zorder=4)
+                    if not visible.all():
+                        # Marker origin is its upper tip, so it meets the axis border.
+                        ax.scatter(positions[~visible], np.full((~visible).sum(), y_max),
+                                   marker=[[-1, -2], [0, 0], [1, -2], [-1, -2]], s=120,
+                                   facecolor=fill_color, edgecolor="black", linewidth=0.7,
+                                   clip_on=False, zorder=5)
     ax.set_xticks(group_offsets)
     ax.set_xticklabels(x_groups)
     ax.set_ylabel(label)
@@ -342,6 +418,11 @@ def plot_ad_gen_summary(
     if y_min is not None:
         ymin, ymax = ax.get_ylim()
         ax.set_ylim(bottom=y_min, top=max(ymax, y_min))
+    if y_max is not None:
+        if any((center + high) * (100 if percentage else 1) > y_max
+               for stats in metric_data.values() for center, _, high in stats):
+            raise ValueError("The display limit would hide a percentile interval.")
+        ax.set_ylim(top=y_max)
     # sns.despine(ax=ax)
 
     def _with_ext(name: str) -> str:
@@ -357,7 +438,7 @@ def plot_ad_gen_summary(
             fig,
             active_models=model_list,
             model_colors=MODEL_COLORS,
-            legends=["calibration", "models"],
+            legends=["calibration", "models"] if len(available_cal_states) > 1 else ["models"],
             style=style,
             in_figure=in_figure,
         )
@@ -369,3 +450,4 @@ def plot_ad_gen_summary(
         plot_des = os.path.join(plot_dir, _with_ext(f_name))
         fig.savefig(plot_des, bbox_inches="tight", dpi=dpi)
         print(f"Saved figure → {plot_des}")
+    return fig, ax
