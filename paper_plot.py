@@ -32,8 +32,8 @@ DEFAULT_STYLE = PlotStyle(base_font_size=20.0, tick_label_size=19.0)
 DEFAULT_QE_CONFIG = {
     # "train_sizes": [15, 148, 1475, 2950],
     "train_sizes": [15, 148, 1475],
-    "models": ["Nominal", "SSL", "Scratch"],
-    # "models": ["Nominal", "Sup(Cls)", "SSL", "Scratch"],
+    # "models": ["Nominal", "SSL", "Scratch"],
+    "models": ["Nominal", "Sup(Cls)", "SSL", "Scratch"],
     # "heads": [],
     "legend": {
         "legends": ["dataset", "heads", "models"],
@@ -110,7 +110,7 @@ DEFAULT_QE_CONFIG = {
     "poi": {
         "enabled": True,
         "fig_size": (13, 5.5),
-        "x_label": r"$D-1$",
+        "x_label": r"$\Delta$",
         "y_label": "",
         "x_col": "concurrence",
         "xerr_col": "uncertainty",
@@ -120,7 +120,7 @@ DEFAULT_QE_CONFIG = {
         "dataset_label_fmt": "{pretty}",
         "left_panel_xlim": (-0.01, 0.005),
         "left_indicator_x": 0.0,
-        "left_indicator_text": r"Separable state ($D-1 = 0$)",
+        "left_indicator_text": r"Separable state ($\Delta = 0$)",
         "right_indicator_x": 0.36 ,
         "right_indicator_color": "gray",
         "right_indicator_linestyle": "--",
@@ -183,7 +183,8 @@ DEFAULT_QE_CONFIG = {
             ),
             "hide_x_axis_text": False,
             # "x_label": r"$\sigma_\mathcal{C}/\mathcal{C}-\langle \sigma_\mathcal{C}/\mathcal{C} \rangle$",
-            "x_label": r"$\sigma_{D}/(D-1)-\langle \sigma_D/(D-1) \rangle$",
+            # "x_label": r"$\sigma_{D}/(D-1)-\langle \sigma_D/(D-1) \rangle$",
+            "x_label": r"$\sigma_\Delta/\Delta-\langle \sigma_\Delta/\Delta \rangle$",
             "cmap": LinearSegmentedColormap.from_list(
                 "custom_precision",
                 ["#0072B2", "#E5ECF6", "#D55E00", ],
