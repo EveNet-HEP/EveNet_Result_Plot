@@ -18,18 +18,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46790000000000004,
+        "mmd": 0.8887886795415001,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.21709678953359487,
+        "mean_mass_difference": 0.11792908868304527
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46659999999999996,
+        "mmd": 0.8893394194612168,
+        "efficiency": 0.9559041335838985,
+        "mean_calibration_difference": 0.21709678953359487,
+        "mean_mass_difference": 0.11792908868304527
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -50,18 +50,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46819999999999995,
+        "mmd": 0.885478802857645,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1331450531873862,
+        "mean_mass_difference": 0.12591312262638843
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46579999999999994,
+        "mmd": 0.8901757040232374,
+        "efficiency": 0.9436678168899053,
+        "mean_calibration_difference": 0.1331450531873862,
+        "mean_mass_difference": 0.12591312262638843
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -82,18 +82,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47230000000000005,
+        "mmd": 0.891551620786841,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.4168975275499621,
+        "mean_mass_difference": 0.1668263219431369
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4742,
+        "mmd": 0.8841966924774214,
+        "efficiency": 0.9289924623737614,
+        "mean_calibration_difference": 0.4168975275499621,
+        "mean_mass_difference": 0.1668263219431369
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -146,18 +146,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.43879999999999997,
+        "mmd": 0.9011848476736661,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7473933920198123,
+        "mean_mass_difference": 0.34836364952601195
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.44560000000000005,
+        "mmd": 0.8930704973560291,
+        "efficiency": 0.8747849003390475,
+        "mean_calibration_difference": 0.7473933920198123,
+        "mean_mass_difference": 0.34836364952601195
       }
     }
   },
@@ -180,18 +180,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46950000000000003,
+        "mmd": 0.8851595232488,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.15431055446716796,
+        "mean_mass_difference": 0.1229545246810938
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4636,
+        "mmd": 0.9004834306086849,
+        "efficiency": 0.9516670154769683,
+        "mean_calibration_difference": 0.15431055446716796,
+        "mean_mass_difference": 0.1229545246810938
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -212,18 +212,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.469,
+        "mmd": 0.8755381008385443,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.13989868136904451,
+        "mean_mass_difference": 0.12485842076986688
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.472,
+        "mmd": 0.8863395239815937,
+        "efficiency": 0.9432783404116302,
+        "mean_calibration_difference": 0.13989868136904451,
+        "mean_mass_difference": 0.12485842076986688
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -244,18 +244,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47189999999999993,
+        "mmd": 0.8991364663467177,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.5207247847867689,
+        "mean_mass_difference": 0.16246787646902383
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4696000000000001,
+        "mmd": 0.8797320861964429,
+        "efficiency": 0.926252871943846,
+        "mean_calibration_difference": 0.5207247847867689,
+        "mean_mass_difference": 0.16246787646902383
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -276,18 +276,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.42940000000000006,
+        "mmd": 0.9063641162959897,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7588629842809002,
+        "mean_mass_difference": 0.3469220800643028
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.43970000000000004,
+        "mmd": 0.8939575767106188,
+        "efficiency": 0.8522667395840202,
+        "mean_calibration_difference": 0.7588629842809002,
+        "mean_mass_difference": 0.3469220800643028
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -308,18 +308,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4391,
+        "mmd": 0.900727657923334,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.748755965046691,
+        "mean_mass_difference": 0.3488794301799774
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.43810000000000004,
+        "mmd": 0.8887510634461707,
+        "efficiency": 0.8733476512941669,
+        "mean_calibration_difference": 0.748755965046691,
+        "mean_mass_difference": 0.3488794301799774
       }
     }
   },
@@ -342,18 +342,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4704,
+        "mmd": 0.8924377158709685,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.4290205196049102,
+        "mean_mass_difference": 0.13382572173761684
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4706,
+        "mmd": 0.8775386023237116,
+        "efficiency": 0.940612478717249,
+        "mean_calibration_difference": 0.4290205196049102,
+        "mean_mass_difference": 0.13382572173761684
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -374,18 +374,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47269999999999995,
+        "mmd": 0.8876688575609842,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1310423777906935,
+        "mean_mass_difference": 0.12010350517613615
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4686,
+        "mmd": 0.8793397765759658,
+        "efficiency": 0.949200334756055,
+        "mean_calibration_difference": 0.1310423777906935,
+        "mean_mass_difference": 0.12010350517613615
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -406,18 +406,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46770000000000006,
+        "mmd": 0.9080530156775316,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1875824897620832,
+        "mean_mass_difference": 0.18282570680683058
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4683,
+        "mmd": 0.8840343906128562,
+        "efficiency": 0.9241071964092608,
+        "mean_calibration_difference": 0.1875824897620832,
+        "mean_mass_difference": 0.18282570680683058
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -438,18 +438,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.43170000000000003,
+        "mmd": 0.9040020715036876,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7527407383700906,
+        "mean_mass_difference": 0.3588836905229785
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.441,
+        "mmd": 0.8831784314728433,
+        "efficiency": 0.8506394487478113,
+        "mean_calibration_difference": 0.7527407383700906,
+        "mean_mass_difference": 0.3588836905229785
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -470,18 +470,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4386,
+        "mmd": 0.8998724908765684,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7491147901188365,
+        "mean_mass_difference": 0.34939734285184515
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4408,
+        "mmd": 0.8948614426900608,
+        "efficiency": 0.8737978138302415,
+        "mean_calibration_difference": 0.7491147901188365,
+        "mean_mass_difference": 0.34939734285184515
       }
     }
   },
@@ -504,18 +504,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4638000000000001,
+        "mmd": 0.8927034556571423,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1516602142575593,
+        "mean_mass_difference": 0.1187516669516702
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46869999999999995,
+        "mmd": 0.8811545290557492,
+        "efficiency": 0.9445751490525972,
+        "mean_calibration_difference": 0.1516602142575593,
+        "mean_mass_difference": 0.1187516669516702
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -536,18 +536,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46290000000000003,
+        "mmd": 0.9015086207822633,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1317466009033976,
+        "mean_mass_difference": 0.12039453954487912
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4614,
+        "mmd": 0.8832666529425538,
+        "efficiency": 0.9456200485952303,
+        "mean_calibration_difference": 0.1317466009033976,
+        "mean_mass_difference": 0.12039453954487912
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -568,18 +568,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46840000000000004,
+        "mmd": 0.8921344178297806,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.5045317065607466,
+        "mean_mass_difference": 0.26667448618940204
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4716,
+        "mmd": 0.8825822187463574,
+        "efficiency": 0.8874843737158883,
+        "mean_calibration_difference": 0.5045317065607466,
+        "mean_mass_difference": 0.26667448618940204
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -600,18 +600,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4332,
+        "mmd": 0.8891594972443302,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7417374525266657,
+        "mean_mass_difference": 0.36247965078703787
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4305,
+        "mmd": 0.8863440439642074,
+        "efficiency": 0.8459260336230603,
+        "mean_calibration_difference": 0.7417374525266657,
+        "mean_mass_difference": 0.36247965078703787
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -632,18 +632,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4337,
+        "mmd": 0.9049604760139853,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.753047108859279,
+        "mean_mass_difference": 0.3502786628899937
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4404,
+        "mmd": 0.8864573411012762,
+        "efficiency": 0.8757383109649179,
+        "mean_calibration_difference": 0.753047108859279,
+        "mean_mass_difference": 0.3502786628899937
       }
     }
   },
@@ -666,18 +666,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4666,
+        "mmd": 0.8859952897912737,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.8418293119259436,
+        "mean_mass_difference": 0.1295543045456715
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4689,
+        "mmd": 0.8705571026003207,
+        "efficiency": 0.9454296352881093,
+        "mean_calibration_difference": 0.8418293119259436,
+        "mean_mass_difference": 0.1295543045456715
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -698,18 +698,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.48020000000000007,
+        "mmd": 0.8892219664732417,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1496846386102477,
+        "mean_mass_difference": 0.13426146295746613
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4737,
+        "mmd": 0.8861597561750502,
+        "efficiency": 0.9486462364062779,
+        "mean_calibration_difference": 0.1496846386102477,
+        "mean_mass_difference": 0.13426146295746613
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -730,18 +730,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46820000000000006,
+        "mmd": 0.895837984053594,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.2397064219244944,
+        "mean_mass_difference": 0.24412339417438855
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.47300000000000003,
+        "mmd": 0.8812489375322426,
+        "efficiency": 0.898462460420645,
+        "mean_calibration_difference": 0.2397064219244944,
+        "mean_mass_difference": 0.24412339417438855
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -762,18 +762,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4311,
+        "mmd": 0.8992729156392218,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7591045655448327,
+        "mean_mass_difference": 0.34376178088518955
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.44349999999999995,
+        "mmd": 0.892334339421644,
+        "efficiency": 0.8605544480942328,
+        "mean_calibration_difference": 0.7591045655448327,
+        "mean_mass_difference": 0.34376178088518955
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -794,18 +794,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4351,
+        "mmd": 0.9143767584215396,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.756755353318635,
+        "mean_mass_difference": 0.3538681944090573
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4389,
+        "mmd": 0.8938310023161774,
+        "efficiency": 0.871902285090144,
+        "mean_calibration_difference": 0.756755353318635,
+        "mean_mass_difference": 0.3538681944090573
       }
     }
   },
@@ -828,18 +828,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46740000000000004,
+        "mmd": 0.8941191117948891,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 1.3174501473093387,
+        "mean_mass_difference": 0.1355777309691129
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4664,
+        "mmd": 0.9025858868231952,
+        "efficiency": 0.9449592376670398,
+        "mean_calibration_difference": 1.3174501473093387,
+        "mean_mass_difference": 0.1355777309691129
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -860,18 +860,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46840000000000004,
+        "mmd": 0.8989180624644124,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1353485851981221,
+        "mean_mass_difference": 0.11973838933569231
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4649,
+        "mmd": 0.8945851607474271,
+        "efficiency": 0.9515811192168407,
+        "mean_calibration_difference": 0.1353485851981221,
+        "mean_mass_difference": 0.11973838933569231
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -892,18 +892,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4509,
+        "mmd": 0.9072731237701339,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.44316401221024,
+        "mean_mass_difference": 0.45776876046430903
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4737000000000001,
+        "mmd": 0.8846594590290786,
+        "efficiency": 0.8351792204344985,
+        "mean_calibration_difference": 0.44316401221024,
+        "mean_mass_difference": 0.45776876046430903
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -924,18 +924,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.425,
+        "mmd": 0.9138156632297878,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.756679546480937,
+        "mean_mass_difference": 0.5987598101164359
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.43760000000000004,
+        "mmd": 0.884356508324656,
+        "efficiency": 0.7800116111206223,
+        "mean_calibration_difference": 0.756679546480937,
+        "mean_mass_difference": 0.5987598101164359
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -956,18 +956,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.43199999999999994,
+        "mmd": 0.9111649943298674,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7473660283651227,
+        "mean_mass_difference": 0.34820386552756144
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4425,
+        "mmd": 0.8886817880874955,
+        "efficiency": 0.8730879988126731,
+        "mean_calibration_difference": 0.7473660283651227,
+        "mean_mass_difference": 0.34820386552756144
       }
     }
   },
@@ -990,18 +990,18 @@
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47170000000000006,
+        "mmd": 0.8794198293448575,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.4105539408360825,
+        "mean_mass_difference": 0.12507169489180794
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46519999999999995,
+        "mmd": 0.8911999986628242,
+        "efficiency": 0.947089121990649,
+        "mean_calibration_difference": 0.4105539408360825,
+        "mean_mass_difference": 0.12507169489180794
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -1022,18 +1022,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47519999999999996,
+        "mmd": 0.8842717614040717,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.1410618931901134,
+        "mean_mass_difference": 0.13164801232951148
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46699999999999997,
+        "mmd": 0.865030293891748,
+        "efficiency": 0.9465508480048513,
+        "mean_calibration_difference": 0.1410618931901134,
+        "mean_mass_difference": 0.13164801232951148
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -1054,18 +1054,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4534000000000001,
+        "mmd": 0.9134618596992754,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.4135924537675335,
+        "mean_mass_difference": 0.37758998029647173
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46930000000000005,
+        "mmd": 0.8749344298769225,
+        "efficiency": 0.8269172655994773,
+        "mean_calibration_difference": 0.4135924537675335,
+        "mean_mass_difference": 0.37758998029647173
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -1086,18 +1086,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.43579999999999997,
+        "mmd": 0.9015940516056313,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7467200847403842,
+        "mean_mass_difference": 0.3437608703060695
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.44410000000000005,
+        "mmd": 0.8856488923658666,
+        "efficiency": 0.8553722224698062,
+        "mean_calibration_difference": 0.7467200847403842,
+        "mean_mass_difference": 0.3437608703060695
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -1118,52 +1118,52 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.43389999999999995,
+        "mmd": 0.9041681337915595,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7548593322693561,
+        "mean_mass_difference": 0.3516389213716609
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.43899999999999995,
+        "mmd": 0.8869568964224792,
+        "efficiency": 0.8727298777041278,
+        "mean_calibration_difference": 0.7548593322693561,
+        "mean_mass_difference": 0.3516389213716609
       }
     }
   },
   "7": {
     "EveNet-f.t.(SSL)-calibrated-OS": {
       "before cut": {
-        "cov": 0.5154,
-        "mmd": 0.8775662598036547,
+        "cov": 0.515,
+        "mmd": 0.8809427649636934,
         "efficiency": 1.0,
-        "mean_calibration_difference": 2.0722004057149093,
-        "mean_mass_difference": 0.10143161036313969
+        "mean_calibration_difference": 0.12734515523167533,
+        "mean_mass_difference": 0.10690870316897116
       },
       "after cut": {
-        "cov": 0.5172000000000001,
-        "mmd": 0.8579862429811713,
-        "efficiency": 0.9634425441651381,
-        "mean_calibration_difference": 2.0722004057149093,
-        "mean_mass_difference": 0.10143161036313969
+        "cov": 0.5117,
+        "mmd": 0.8821948269331041,
+        "efficiency": 0.9637668673070394,
+        "mean_calibration_difference": 0.12734515523167533,
+        "mean_mass_difference": 0.10690870316897116
       }
     },
     "EveNet-f.t.(SSL)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.4654,
+        "mmd": 0.9007149119416322,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.8324888394559599,
+        "mean_mass_difference": 0.13363152360339758
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.458,
+        "mmd": 0.8843935409889825,
+        "efficiency": 0.9463650563541326,
+        "mean_calibration_difference": 0.8324888394559599,
+        "mean_mass_difference": 0.13363152360339758
       }
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-OS": {
@@ -1184,18 +1184,18 @@
     },
     "EveNet-f.t.(Cls+Gen)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.47329999999999994,
+        "mmd": 0.8910629194681612,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.13625801530623372,
+        "mean_mass_difference": 0.12444408343986939
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4708,
+        "mmd": 0.88640933182178,
+        "efficiency": 0.9430442826701555,
+        "mean_calibration_difference": 0.13625801530623372,
+        "mean_mass_difference": 0.12444408343986939
       }
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-OS": {
@@ -1216,18 +1216,18 @@
     },
     "EveNet-f.t.(Cls+Gen+Assign)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.46840000000000004,
+        "mmd": 0.8917680955259673,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.32450823661253086,
+        "mean_mass_difference": 0.285191630849804
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.46840000000000004,
+        "mmd": 0.8829069966550588,
+        "efficiency": 0.8938814419307416,
+        "mean_calibration_difference": 0.32450823661253086,
+        "mean_mass_difference": 0.285191630849804
       }
     },
     "EveNet-f.t.(Cls)-calibrated-OS": {
@@ -1248,18 +1248,18 @@
     },
     "EveNet-f.t.(Cls)-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.42779999999999996,
+        "mmd": 0.9115859285046322,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.754275236515455,
+        "mean_mass_difference": 0.34314381205146927
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.43740000000000007,
+        "mmd": 0.890632119158991,
+        "efficiency": 0.8547278872708893,
+        "mean_calibration_difference": 0.754275236515455,
+        "mean_mass_difference": 0.34314381205146927
       }
     },
     "EveNet-scratch-calibrated-OS": {
@@ -1280,18 +1280,18 @@
     },
     "EveNet-scratch-calibrated-SS": {
       "before cut": {
-        "cov": 0.43479999999999996,
-        "mmd": 0.895121935215272,
+        "cov": 0.437,
+        "mmd": 0.9019110787471801,
         "efficiency": 1.0,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "mean_calibration_difference": 0.7497132599420298,
+        "mean_mass_difference": 0.350668486643677
       },
       "after cut": {
-        "cov": 0.4394,
-        "mmd": 0.8877570128789879,
-        "efficiency": 0.860083663395636,
-        "mean_calibration_difference": 0.7906353311906219,
-        "mean_mass_difference": 0.3393655342663704
+        "cov": 0.4422,
+        "mmd": 0.8895946600301095,
+        "efficiency": 0.8734781571502693,
+        "mean_calibration_difference": 0.7497132599420298,
+        "mean_mass_difference": 0.350668486643677
       }
     }
   }
